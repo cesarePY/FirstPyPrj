@@ -1,8 +1,9 @@
 #importa decoratore "dataclass" da modulo "dataclasses"
 from dataclasses import dataclass
-
+#Scopo principale delle data classes è quello di costruire classi che rappresentano tipi di dato e i loro comportamenti
 #Decoratore @dataclass permette a python di inferire la presenza di oggetti di tipo Field
-# init = indica se creare il costruttore __init__ automaticament
+#e permette la creazione dietro le quinte di 4 metodi speciali, utili quando si vuole rappresentate un tipo di dato
+# init = indica se creare il costruttore __init__ automaticamente
 # repr = indica se creare automaticamente il metodo __repr__
 # order = indica se creare automaticament il metodo di confronto di minore o maggiore
 # frozen = indica se impedire la modifica dei valori dei Field dopo l'inizializzazione
@@ -20,7 +21,7 @@ class MyClass:
 
 #il comando qui sotto è possibile grazie a @dataclass(init = True)
 mc = MyClass("Giulio","Verne")
-#Visualizza l'istanza di classe con i contenuti dei campi (Field) grazie al fatto che esiste __repr__
+#Visualizza l'istanza di classe, rappresentandola con i contenuti dei campi (Field) grazie al fatto che esiste __repr__
 #@dataclass(repr = True)
 print(f'mc            = "{mc}"')
 mc2 = MyClass("Mario","Rossi")
@@ -31,3 +32,4 @@ print(f'mc < mc2      = "{mc < mc2}"')
 #Il comando qui sotto è possibile grazie a @dataclass(frozen = False)
 mc2.nome = "Ciccio"
 print(f'mc2.nome      = "{mc2.nome}"')
+
