@@ -5,6 +5,7 @@ import openai
 #print(variabile)
 
 #Definisce la propria api_key segreta, creata da Openai.com
+#QUESTA QUI SOTTO NON E' PIU VALIDA, OCCORRE CREARNE UNA NUOVA DA OPENAI.COM
 openai.api_key = "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"
 
 def test_api():
